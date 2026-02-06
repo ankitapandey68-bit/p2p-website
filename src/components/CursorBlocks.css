@@ -1,0 +1,34 @@
+.cursor-blocks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursor-blocks-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.cursor-block-ring {
+  fill: none;
+  stroke: url(#cursorBlockGrad);
+  stroke-width: 2;
+}
+
+.cursor-block-dot {
+  fill: url(#cursorBlockGrad);
+}
+
+@media (hover: none) {
+  .cursor-blocks {
+    display: none;
+  }
+}

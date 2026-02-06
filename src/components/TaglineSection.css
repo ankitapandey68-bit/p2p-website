@@ -1,0 +1,69 @@
+/* Flowing / creating motion – not a fixed pattern */
+.tagline-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.connection-visual {
+  position: absolute;
+  top: 50%;
+  right: -100px;
+  transform: translateY(-50%);
+  width: 140px;
+  height: 60px;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Stream of particles moving in a flow (creating / connecting feel) */
+.connection-visual .particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4DEEEA, #60A5FA);
+  animation: flowRight 2.5s linear infinite;
+}
+
+.connection-visual .particle:nth-child(1) { top: 10px; animation-delay: 0s; }
+.connection-visual .particle:nth-child(2) { top: 25px; animation-delay: 0.4s; }
+.connection-visual .particle:nth-child(3) { top: 40px; animation-delay: 0.8s; }
+.connection-visual .particle:nth-child(4) { top: 18px; animation-delay: 1.2s; }
+.connection-visual .particle:nth-child(5) { top: 32px; animation-delay: 1.6s; }
+.connection-visual .particle:nth-child(6) { top: 8px; animation-delay: 2s; }
+.connection-visual .particle:nth-child(7) { top: 48px; animation-delay: 0.2s; }
+.connection-visual .particle:nth-child(8) { top: 22px; animation-delay: 0.6s; }
+.connection-visual .particle:nth-child(9) { top: 38px; animation-delay: 1s; }
+
+@keyframes flowRight {
+  0% {
+    left: -20px;
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  15% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  85% {
+    opacity: 0.9;
+  }
+  100% {
+    left: 140px;
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+@media (max-width: 900px) {
+  .connection-visual {
+    right: -70px;
+    width: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .connection-visual {
+    display: none;
+  }
+}

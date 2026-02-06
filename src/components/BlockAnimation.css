@@ -1,0 +1,49 @@
+/* Split background + morphing geometric blocks - video reference style */
+.block-animation {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  overflow: hidden;
+}
+
+.block-animation-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+
+.block-animation-white {
+  flex: 0 0 65%;
+  background: #ffffff;
+}
+
+.block-animation-blue {
+  flex: 1;
+  background: #14243c;
+}
+
+.block-animation-blocks {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block-animation-blocks svg {
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  max-height: 320px;
+}
+
+/* Phase groups - one visible at a time */
+.phase-group {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.block-animation[data-phase="1"] .phase-1 { opacity: 1; }
+.block-animation[data-phase="2"] .phase-2 { opacity: 1; }
+.block-animation[data-phase="3"] .phase-3 { opacity: 1; }
+.block-animation[data-phase="4"] .phase-4 { opacity: 1; }

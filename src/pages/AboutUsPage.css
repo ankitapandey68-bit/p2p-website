@@ -1,0 +1,26 @@
+/* Our Core Values – values orbit around round center image */
+.about-core-values-orbit {
+  animation: aboutOrbit 45s linear infinite;
+}
+
+.about-core-values-card-inner {
+  animation: aboutOrbitReverse 45s linear infinite;
+}
+
+@keyframes aboutOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes aboutOrbitReverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
