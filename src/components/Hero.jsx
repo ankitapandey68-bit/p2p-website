@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Hero.css";
 
 function Hero() {
+  const videoRef = useRef(null);
+
   const words = [
     "Digital Infrastructure",
     "Smart Networks",
@@ -20,9 +22,37 @@ function Hero() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const playVideo = () => {
+      video.play().catch(() => {});
+    };
+
+    if (video.readyState >= 2) {
+      playVideo();
+    } else {
+      video.addEventListener("loadeddata", playVideo);
+      return () => video.removeEventListener("loadeddata", playVideo);
+    }
+  }, []);
+
   return (
     <section id="hero" className="hero">
-      <div className="hero-bg" />
+<video
+  ref={videoRef}
+  className="hero-video"
+  src="https://res.cloudinary.com/dawod02ta/video/upload/v1770406542/vecteezy_colorful-fast-lines-background_2972580_tcsi1o.mp4"
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="auto"
+/>
+
+
+
 
       <div className="hero-overlay">
         <div>

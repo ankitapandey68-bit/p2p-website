@@ -1,4 +1,7 @@
-/* HERO SECTION */
+/* ===============================
+   HERO SECTION
+================================ */
+
 .hero {
   position: relative;
   width: 100%;
@@ -6,44 +9,44 @@
   overflow: hidden;
 }
 
-/* ANIMATED GRADIENT BACKGROUND (replaces large video) */
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #0c4a6e 50%, #1e3a8a 75%, #0f172a 100%);
-  background-size: 400% 400%;
-  animation: heroGradient 12s ease infinite;
-}
+/* ===============================
+   VIDEO BACKGROUND
+================================ */
 
-@keyframes heroGradient {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-.hero-bg::before {
-  content: "";
+.hero-video {
   position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 30% 20%, rgba(77, 238, 234, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 80%, rgba(96, 165, 250, 0.12) 0%, transparent 50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: 0;
   pointer-events: none;
 }
 
-/* DARK OVERLAY FOR READABILITY */
+/* ===============================
+   DARK OVERLAY FOR READABILITY
+================================ */
+
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.55) 0%,
-    rgba(0, 0, 0, 0.25) 60%,
-    rgba(0, 0, 0, 0.1) 100%
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.35) 60%,
+    rgba(0, 0, 0, 0.15) 100%
   );
   z-index: 1;
 }
 
-/* TEXT WRAPPER */
+/* ===============================
+   CONTENT WRAPPER
+================================ */
+
 .hero-overlay {
   position: relative;
   z-index: 2;
@@ -55,8 +58,11 @@
   padding: 0 80px;
 }
 
-/* HEADING */
-.hero-overlay h1 {
+/* ===============================
+   HEADING
+================================ */
+
+.hero-title {
   font-size: 56px;
   font-weight: 700;
   line-height: 1.15;
@@ -64,11 +70,7 @@
   margin-bottom: 20px;
 }
 
-/* HEADING WORD-BY-WORD ANIMATION */
-.hero-title {
-  display: inline-block;
-}
-
+/* WORD-BY-WORD ANIMATION */
 .hero-title .hero-word {
   display: inline-block;
   opacity: 0;
@@ -77,17 +79,14 @@
 }
 
 .hero-title .hero-word:nth-child(1) {
-  animation-delay: 0.0s;
+  animation-delay: 0s;
 }
-
 .hero-title .hero-word:nth-child(2) {
   animation-delay: 0.15s;
 }
-
 .hero-title .hero-word:nth-child(3) {
   animation-delay: 0.3s;
 }
-
 .hero-title .hero-word:nth-child(4) {
   animation-delay: 0.45s;
 }
@@ -103,16 +102,22 @@
   }
 }
 
-/* CHANGING GRADIENT TEXT */
+/* ===============================
+   CHANGING GRADIENT TEXT
+================================ */
+
 .changing-text {
   display: inline-block;
-  background: linear-gradient(90deg, #4DEEEA, #60A5FA);
+  background: linear-gradient(90deg, #4deeea, #60a5fa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 800;
 }
 
-/* SUBTEXT */
+/* ===============================
+   SUB TEXT
+================================ */
+
 .hero-overlay p {
   max-width: 620px;
   font-size: 18px;
@@ -121,7 +126,10 @@
   margin-bottom: 30px;
 }
 
-/* CTA BUTTON */
+/* ===============================
+   CTA BUTTON
+================================ */
+
 .primary-btn {
   display: inline-block;
   padding: 14px 30px;
@@ -129,7 +137,7 @@
   font-weight: 600;
   color: #ffffff;
   background: transparent;
-  border: 2px solid #4DEEEA;
+  border: 2px solid #4deeea;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -137,17 +145,20 @@
 }
 
 .primary-btn:hover {
-  background: #4DEEEA;
+  background: #4deeea;
   color: #020617;
 }
 
-/* RESPONSIVE */
+/* ===============================
+   RESPONSIVE
+================================ */
+
 @media (max-width: 1024px) {
   .hero-overlay {
     padding: 0 40px;
   }
 
-  .hero-overlay h1 {
+  .hero-title {
     font-size: 44px;
   }
 }
@@ -157,7 +168,7 @@
     padding: 0 24px;
   }
 
-  .hero-overlay h1 {
+  .hero-title {
     font-size: 34px;
   }
 
