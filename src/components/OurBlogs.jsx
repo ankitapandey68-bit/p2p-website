@@ -308,7 +308,7 @@ function OurBlogs() {
   );
 
   return (
-    <section ref={sectionRef} style={styles.section}>
+    <section ref={sectionRef} style={styles.section} className="our-blogs-section">
       <style>{`
         @keyframes featuredScrollUp {
           0% { transform: translateY(0); }
@@ -321,16 +321,16 @@ function OurBlogs() {
           animation-play-state: paused;
         }
       `}</style>
-      <div style={styles.container}>
+      <div style={styles.container} className="our-blogs-container">
         <div style={styles.headerWrap}>
-          <AnimatedHeading as="h2" style={styles.heading}>Discover our latest blog</AnimatedHeading>
-          <p style={styles.subheading}>
+          <AnimatedHeading as="h2" style={styles.heading} className="our-blogs-heading">Discover our latest blog</AnimatedHeading>
+          <p style={styles.subheading} className="our-blogs-subheading">
             Exploring Current Trends Influencing Infrastructure, Connectivity, And Digital Systems In India.
           </p>
         </div>
 
-        <div style={styles.layout}>
-          <div style={styles.cardsRow}>
+        <div style={styles.layout} className="our-blogs-layout">
+          <div style={styles.cardsRow} className="our-blogs-cards">
             {blogItems.map((item, index) => {
               const isVisible = cardsVisible[index];
               const fromLeft = index % 2 === 0;

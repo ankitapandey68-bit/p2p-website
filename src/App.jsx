@@ -14,10 +14,11 @@ import TermsConditionsPage from "./pages/TermsConditionsPage";
 
 function App() {
   return (
-    <>
+    <div style={{ width: "100%", minHeight: "100vh", overflowX: "hidden", maxWidth: "100%" }}>
       <ScrollToTop />
       <CursorBlocks />
       <Navbar />
+      <main style={{ width: "100%", overflowX: "hidden", maxWidth: "100%" }}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutUsPage />} />
@@ -28,8 +29,9 @@ function App() {
         <Route path="/disclaimer" element={<DisclaimerPage />} />
         <Route path="/terms" element={<TermsConditionsPage />} />
       </Routes>
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

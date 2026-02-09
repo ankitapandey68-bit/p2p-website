@@ -134,13 +134,13 @@ const styles = {
 
 function WhyChoose() {
   return (
-    <section style={styles.section}>
+    <section style={styles.section} className="why-choose-section">
       <div style={styles.container}>
-        <AnimatedHeading as="h2" style={styles.heading}>Why Choose P2P Infrastructure</AnimatedHeading>
-        <p style={styles.subheading}>
+        <AnimatedHeading as="h2" style={styles.heading} className="why-choose-heading">Why Choose P2P Infrastructure</AnimatedHeading>
+        <p style={styles.subheading} className="why-choose-subheading">
           Trusted By Government, Railways, Corporates And Institutions For End-To-End Technology And Infrastructure Solutions.
         </p>
-        <div style={styles.grid}>
+        <div style={styles.grid} className="why-choose-grid">
           {points.map((item, index) => (
             <div
               key={index}

@@ -310,10 +310,11 @@ export default function AboutUsPage() {
       </div>
 
       {/* Mission & Vision – dono images ek saath screen par aate hain */}
-      <div ref={missionVisionContainerRef} style={styles.missionVisionContainer}>
+      <div ref={missionVisionContainerRef} style={styles.missionVisionContainer} className="about-mission-container about-vision-container">
         {/* Mission: left = image (slide from left), right = text */}
         <div style={styles.missionRow}>
           <div
+            className="about-mission-image"
             style={{
               ...styles.missionImageCol,
               opacity: missionVisible ? 1 : 0,
@@ -344,6 +345,7 @@ export default function AboutUsPage() {
             </p>
           </div>
           <div
+            className="about-vision-image"
             style={{
               ...styles.visionImageCol,
               opacity: visionVisible ? 1 : 0,
@@ -388,7 +390,7 @@ export default function AboutUsPage() {
 
             {/* Center: bada round image */}
             <div style={styles.coreValuesCenterCol}>
-              <div style={styles.centerImageWrap}>
+              <div style={styles.centerImageWrap} className="about-center-image">
                 <img src={coreValuesImage} alt="" style={styles.centerImage} />
               </div>
             </div>

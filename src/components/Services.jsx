@@ -121,27 +121,27 @@ function Services() {
   };
 
   return (
-    <section style={styles.section}>
+    <section style={styles.section} className="services-section">
       <div style={styles.videoBg} />
       <div style={styles.overlay} />
-      <div style={styles.container}>
+      <div style={styles.container} className="services-container">
         <div style={{
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateY(0)' : 'translateY(28px)',
           transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
           textAlign: 'center',
         }}>
-          <AnimatedHeading as="h2" style={styles.heading}>Our Solutions</AnimatedHeading>
+          <AnimatedHeading as="h2" style={styles.heading} className="services-heading">Our Solutions</AnimatedHeading>
         </div>
-        <p style={styles.subtext}>
+        <p style={styles.subtext} className="services-subtext">
           Integrated technology and infrastructure services built to enable secure, scalable and future-ready operations for enterprises, government and institutions.
         </p>
 
-        <div style={styles.sliderOuter}>
+        <div style={styles.sliderOuter} className="services-slider-outer">
           <button type="button" aria-label="Previous cards" style={styles.arrowLeft} onClick={handlePrev}>
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
           </button>
-          <div style={styles.sliderViewport}>
+          <div style={styles.sliderViewport} className="services-slider-viewport">
           <div
             style={{
               ...styles.grid,

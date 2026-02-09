@@ -241,11 +241,11 @@ function LatestNews() {
   }, []);
 
   return (
-    <section ref={sectionRef} style={styles.section}>
-      <div style={styles.container}>
+    <section ref={sectionRef} style={styles.section} className="latest-news-section">
+      <div style={styles.container} className="latest-news-container">
         <div style={styles.headerWrap}>
-          <AnimatedHeading as="h2" style={styles.heading}>Latest News</AnimatedHeading>
-          <p style={styles.subheading}>
+          <AnimatedHeading as="h2" style={styles.heading} className="latest-news-heading">Latest News</AnimatedHeading>
+          <p style={styles.subheading} className="latest-news-subheading">
             Industry Developments And Infrastructure Trends Relevant To Networks, Surveillance And Digital Platforms.
           </p>
         </div>
@@ -258,9 +258,10 @@ function LatestNews() {
             animation: newsTickerScroll 28s linear infinite;
           }
         `}</style>
-        <div style={styles.layout}>
-          <div style={styles.leftCol}>
+        <div style={styles.layout} className="latest-news-layout">
+          <div style={styles.leftCol} className="latest-news-left-col">
             <div
+              className="latest-news-image-col"
               style={{
                 ...styles.imageCol,
                 transform: entered ? 'translateX(0)' : 'translateX(-120px)',

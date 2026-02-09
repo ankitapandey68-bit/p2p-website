@@ -4,7 +4,9 @@ import './TaglineSection.css';
 const styles = {
   section: {
     width: '100%',
-    padding: '160px 24px 160px',
+    maxWidth: '100%',
+    overflowX: 'hidden',
+    padding: 'clamp(60px, 12vw, 160px) 24px clamp(60px, 12vw, 160px)',
     backgroundColor: '#FFFFFF',
     background: '#FFFFFF',
     textAlign: 'center',

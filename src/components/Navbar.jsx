@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Hero.css";
 import "./Navbar.css";
@@ -6,6 +6,7 @@ import ContactForm from "./ContactForm";
 
 function Navbar() {
   const [showContactForm, setShowContactForm] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const closeTimerRef = useRef(null);
   const location = useLocation();
 
@@ -14,6 +15,7 @@ function Navbar() {
       e.preventDefault();
       document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" });
     }
+    setMobileMenuOpen(false);
   };
 
   const handleContactEnter = () => {
@@ -25,36 +27,66 @@ function Navbar() {
     closeTimerRef.current = setTimeout(() => setShowContactForm(false), 150);
   };
 
+  const handleContactClick = () => {
+    setShowContactForm(true);
+    setMobileMenuOpen(false);
+  };
+
+  const closeMobileMenu = () => setMobileMenuOpen(false);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileMenuOpen]);
+
   return (
-    <header style={styles.header}>
-      <div style={styles.container}>
-        {/* Logo - click to go home or scroll to hero on home */}
-        <Link to="/" style={{ ...styles.logo, textDecoration: "none" }} aria-label="Go to home" onClick={handleLogoClick}>
+    <header style={styles.header} className="navbar-header">
+      <div style={styles.container} className="navbar-container">
+        <Link to="/" className="navbar-logo" style={{ ...styles.logo, textDecoration: "none" }} aria-label="Go to home" onClick={handleLogoClick}>
           P2P <span style={styles.logoBold}>Infrastructure</span>
         </Link>
 
-        {/* Menu */}
-        <nav>
-          <ul style={styles.menu}>
-            <li style={styles.menuItem}><Link to="/" style={styles.menuLink}>Home</Link></li>
-            <li style={styles.menuItem}><Link to="/about" style={styles.menuLink}>About Us</Link></li>
-            <li style={styles.menuItem}><Link to="/solutions" style={styles.menuLink}>Solutions</Link></li>
-            <li style={styles.menuItem}><Link to="/industries" style={styles.menuLink}>Industries</Link></li>
-            <li style={styles.menuItem}><Link to="/projects" style={styles.menuLink}>Projects</Link></li>
+        <button
+          type="button"
+          className="navbar-hamburger"
+          aria-label="Toggle menu"
+          aria-expanded={mobileMenuOpen}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          <span className={mobileMenuOpen ? "open" : ""} />
+          <span className={mobileMenuOpen ? "open" : ""} />
+          <span className={mobileMenuOpen ? "open" : ""} />
+        </button>
+
+        {mobileMenuOpen && (
+          <div className="navbar-backdrop" onClick={closeMobileMenu} aria-hidden="true" />
+        )}
+        <nav className={`navbar-nav ${mobileMenuOpen ? "open" : ""}`}>
+          <ul style={styles.menu} className="navbar-menu">
+            <li><Link to="/" style={styles.menuLink} onClick={closeMobileMenu}>Home</Link></li>
+            <li><Link to="/about" style={styles.menuLink} onClick={closeMobileMenu}>About Us</Link></li>
+            <li><Link to="/solutions" style={styles.menuLink} onClick={closeMobileMenu}>Solutions</Link></li>
+            <li><Link to="/industries" style={styles.menuLink} onClick={closeMobileMenu}>Industries</Link></li>
+            <li><Link to="/projects" style={styles.menuLink} onClick={closeMobileMenu}>Projects</Link></li>
             <li
-              style={styles.menuItem}
               onMouseEnter={handleContactEnter}
               onMouseLeave={handleContactLeave}
+              onClick={handleContactClick}
             >
-              Contact Us
+              <span style={{ ...styles.menuItem, cursor: "pointer" }}>Contact Us</span>
               {showContactForm && (
                 <div
+                  className="navbar-contact-dropdown"
                   style={styles.formDropdown}
                   onMouseEnter={handleContactEnter}
                   onMouseLeave={handleContactLeave}
                 >
-                  <div style={styles.formBackdrop} />
-                  <div style={styles.formWrap}>
+                  <div style={styles.formBackdrop} onClick={() => setShowContactForm(false)} />
+                  <div style={styles.formWrap} className="navbar-form-wrap">
                     <button
                       type="button"
                       aria-label="Close form"
@@ -79,14 +111,13 @@ function Navbar() {
 
 const styles = {
   header: {
-    backgroundColor: "#0b1c2d",   // Dark Navy
+    backgroundColor: "#0b1c2d",
     borderBottom: "1px solid rgba(255,255,255,0.08)",
     position: "sticky",
     top: 0,
     zIndex: 100,
     boxShadow: "0 6px 24px rgba(0,0,0,0.35)",
   },
-
   container: {
     maxWidth: "1300px",
     margin: "0 auto",
@@ -95,7 +126,6 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
   },
-
   logo: {
     fontSize: "30px",
     fontWeight: "700",
@@ -103,7 +133,6 @@ const styles = {
     letterSpacing: "0.5px",
     cursor: "pointer",
   },
-
   logoBold: {
     fontWeight: "900",
     background: "linear-gradient(90deg, #4DEEEA, #60A5FA)",
@@ -111,7 +140,6 @@ const styles = {
     backgroundClip: "text",
     WebkitTextFillColor: "transparent",
   },
-
   menu: {
     listStyle: "none",
     display: "flex",
@@ -120,16 +148,13 @@ const styles = {
     padding: 0,
     fontSize: "17px",
   },
-
   menuItem: {
     color: "#e5e7eb",
-    cursor: "pointer",
     fontWeight: "500",
     transition: "color 0.25s ease",
-    position: "relative",
   },
   menuLink: {
-    color: "inherit",
+    color: "#e5e7eb",
     textDecoration: "none",
     transition: "color 0.25s ease",
   },
@@ -180,4 +205,5 @@ const styles = {
     transition: "background 0.2s ease, transform 0.2s ease",
   },
 };
+
 export default Navbar;

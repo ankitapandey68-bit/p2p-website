@@ -183,7 +183,7 @@ const socialIcons = [
 function Footer() {
   return (
     <footer id="contact" style={styles.footer}>
-      <div style={styles.main}>
+      <div style={styles.main} className="footer-main">
         <div style={styles.brand}>
           <div style={styles.logo}>P2P <span style={styles.logoBold}>Infrastructure</span></div>
           <p style={styles.tagline}>
@@ -239,15 +239,15 @@ function Footer() {
           </div>
         </div>
 
-        <div style={styles.formColumn}>
+        <div style={styles.formColumn} className="footer-form-column">
           <ContactForm compact={true} />
         </div>
       </div>
 
-      <div style={styles.bottom}>
-        <div style={styles.bottomInner}>
+      <div style={styles.bottom} className="footer-bottom">
+        <div style={styles.bottomInner} className="footer-bottom-inner">
           <p style={styles.copyright}>© {new Date().getFullYear()} P2P Infrastructure. All rights reserved.</p>
-          <div style={styles.legal}>
+          <div style={styles.legal} className="footer-legal">
             <Link to="/privacy" style={styles.legalLink}>Privacy Policy</Link>
             <Link to="/disclaimer" style={styles.legalLink}>Disclaimer</Link>
             <Link to="/terms" style={styles.legalLink}>Terms and Conditions</Link>
