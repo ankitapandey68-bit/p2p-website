@@ -269,7 +269,7 @@ function LatestNews() {
                 transition: `transform ${ENTRANCE_DURATION}s ease-out, opacity ${ENTRANCE_DURATION}s ease-out`,
               }}
             >
-              <img src={newsImage} alt="News and updates" style={styles.image} loading="lazy" />
+              <img src={newsImage} alt="News and updates" style={styles.image} className="latest-news-img" loading="lazy" />
             </div>
             <div style={styles.tickerWrap}>
               <div className="news-ticker-track" style={styles.tickerTrack}>
@@ -283,6 +283,7 @@ function LatestNews() {
             </div>
           </div>
           <div
+            className="latest-news-content-col"
             style={{
               ...styles.contentCol,
               transform: entered ? 'translateX(0)' : 'translateX(120px)',

@@ -36,17 +36,42 @@
     white-space: normal !important;
   }
 
+  /* Why Choose - card icons middle mein (mobile) */
+  .why-choose-card {
+    text-align: center !important;
+  }
+  .why-choose-card-icon {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
   .latest-news-layout {
     flex-direction: column !important;
   }
-  .latest-news-image-col,
   .latest-news-left-col {
+    order: 1;
     flex: 1 1 100% !important;
     width: 100% !important;
     max-width: 100% !important;
   }
   .latest-news-image-col {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
     height: 280px !important;
+    min-height: 280px !important;
+    transform: none !important;
+    opacity: 1 !important;
+    display: block !important;
+  }
+  .latest-news-img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  .latest-news-content-col {
+    order: 2;
   }
   .latest-news-subheading {
     white-space: normal !important;
@@ -120,6 +145,7 @@
   }
   .latest-news-image-col {
     height: 220px !important;
+    min-height: 220px !important;
   }
 
   .our-blogs-heading {

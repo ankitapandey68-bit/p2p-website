@@ -145,6 +145,7 @@ function WhyChoose() {
             <div
               key={index}
               style={styles.card}
+              className="why-choose-card"
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-4px)';
                 e.currentTarget.style.boxShadow = '0 12px 32px rgba(15, 23, 42, 0.12)';
@@ -154,7 +155,7 @@ function WhyChoose() {
                 e.currentTarget.style.boxShadow = '0 4px 20px rgba(15, 23, 42, 0.08)';
               }}
             >
-              <div style={styles.iconWrap}>{item.icon}</div>
+              <div style={styles.iconWrap} className="why-choose-card-icon">{item.icon}</div>
               <h3 style={styles.cardTitle}>{item.title}</h3>
               <p style={styles.cardDesc}>{item.desc}</p>
             </div>
