@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import "./AboutUsPage.css";
 import bannerImage from "../assets/vecteezy_silhouettes-of-people-standing-in-a-line_70064434.jpg";
 import AnimatedHeading from "../components/AnimatedHeading";
 import missionImage from "../assets/vecteezy_digital-target-arrow-striking-the-core-of-a-futuristic_70022293.jpg";
@@ -23,10 +24,14 @@ const styles = {
     height: "320px",
   },
   container: {
-    maxWidth: "900px",
+    maxWidth: "1200px",
     margin: "0 auto",
-    padding: "48px 24px 0",
+    padding: "48px 48px 0",
     textAlign: "center",
+  },
+  introTextWrap: {
+    textAlign: "justify",
+    maxWidth: "100%",
   },
   h2: {
     fontSize: "38px",
@@ -54,6 +59,13 @@ const styles = {
     color: "#374151",
     lineHeight: 1.8,
     marginBottom: "20px",
+  },
+  introParagraph: {
+    fontSize: "17px",
+    color: "#374151",
+    lineHeight: 1.8,
+    marginBottom: "20px",
+    textAlign: "justify",
   },
   highlight: {
     background: "linear-gradient(90deg, #4DEEEA, #60A5FA)",
@@ -298,15 +310,17 @@ export default function AboutUsPage() {
             </AnimatedHeading>
           </div>
         </div>
-        <p style={styles.paragraph}>
-          <span style={styles.highlight}>P2P Infrastructure</span> is a trusted provider of comprehensive technology and engineering solutions, delivering services across IT Infrastructure, Telecommunication, Mechanical Systems, Smart Surveillance, Data Center Solutions, Fiber Networking, and Digital Technologies. We are committed to building reliable, scalable, and future-ready systems that support the evolving operational needs of modern organizations.
-        </p>
-        <p style={styles.paragraph}>
-          Headquartered in Varanasi, India, P2P Infrastructure works closely with enterprises, government departments, railways, educational institutions, and private organizations. Our solutions are carefully designed and customized to align with specific project requirements, operational challenges, and long-term objectives.
-        </p>
-        <p style={styles.paragraph}>
-          Backed by strong engineering expertise, certified professionals, and modern tools, we follow a customer-first approach in every engagement. Our focus on quality, reliability, and timely delivery enables us to consistently achieve excellence across projects of varying scale and complexity.
-        </p>
+        <div style={styles.introTextWrap} className="about-intro-text">
+          <p style={styles.introParagraph}>
+            <span style={styles.highlight}>P2P Infrastructure</span> is a trusted provider of comprehensive technology and engineering solutions, delivering services across IT Infrastructure, Telecommunication, Mechanical Systems, Smart Surveillance, Data Center Solutions, Fiber Networking, and Digital Technologies. We are committed to building reliable, scalable, and future-ready systems that support the evolving operational needs of modern organizations.
+          </p>
+          <p style={styles.introParagraph}>
+            Headquartered in Varanasi, India, P2P Infrastructure works closely with enterprises, government departments, railways, educational institutions, and private organizations. Our solutions are carefully designed and customized to align with specific project requirements, operational challenges, and long-term objectives.
+          </p>
+          <p style={styles.introParagraph}>
+            Backed by strong engineering expertise, certified professionals, and modern tools, we follow a customer-first approach in every engagement. Our focus on quality, reliability, and timely delivery enables us to consistently achieve excellence across projects of varying scale and complexity.
+          </p>
+        </div>
       </div>
 
       {/* Mission & Vision – dono images ek saath screen par aate hain */}

@@ -25,6 +25,21 @@
   }
 }
 
+/* Laptop: Who We Are – text justified, left-right space use, lines barabar */
+@media (min-width: 769px) {
+  .about-intro-text {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  .about-intro-text p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .about-mission-image,
