@@ -32,7 +32,20 @@
 }
 
 @media (max-width: 768px) {
-  /* Hero: Reliable, Scalable & Future-Ready – mobile par bada heading */
+  /* Hero: content upar se – Reliable heading navbar ke kareeb */
+  .hero .hero-overlay,
+  section.hero .hero-overlay {
+    padding-top: 16px !important;
+    padding-bottom: 0 !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+  .hero .hero-overlay > div,
+  section.hero .hero-overlay > div {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  /* Hero: mobile par bada heading */
   .hero .hero-title,
   section.hero .hero-title {
     font-size: 52px !important;
@@ -147,6 +160,13 @@
 }
 
 @media (max-width: 480px) {
+  /* Hero: chhote mobile – content aur upar */
+  .hero .hero-overlay,
+  section.hero .hero-overlay {
+    padding-top: 12px !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
   /* Hero: chhote mobile par bhi bada heading */
   .hero .hero-title,
   section.hero .hero-title {

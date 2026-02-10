@@ -166,10 +166,15 @@
   }
 }
 
-/* Mobile: Reliable, Scalable & Future-Ready heading – bada text */
+/* Mobile: Reliable heading bahut upar – minimal top gap */
 @media (max-width: 768px) {
   .hero-overlay {
-    padding: 0 24px;
+    padding: 12px 24px 0 !important;
+    align-items: flex-start !important;
+  }
+  .hero-overlay > div {
+    margin-top: 0;
+    padding-top: 0;
   }
 
   .hero-title {
@@ -184,7 +189,12 @@
 
 @media (max-width: 480px) {
   .hero-overlay {
-    padding: 0 16px;
+    padding: 10px 16px 0 !important;
+    align-items: flex-start !important;
+  }
+  .hero-overlay > div {
+    margin-top: 0;
+    padding-top: 0;
   }
 
   .hero-title {
