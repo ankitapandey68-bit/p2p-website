@@ -271,7 +271,7 @@ function LatestNews() {
             >
               <img src={newsImage} alt="News and updates" style={styles.image} className="latest-news-img" loading="lazy" />
             </div>
-            <div style={styles.tickerWrap}>
+            <div style={styles.tickerWrap} className="latest-news-ticker-wrap">
               <div className="news-ticker-track" style={styles.tickerTrack}>
                 <span style={styles.tickerText}>
                   Infrastructure Updates • Network Solutions • Smart City • Surveillance • Digital India • Fiber & OFC • Data Center • Telecom •

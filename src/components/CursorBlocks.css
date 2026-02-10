@@ -28,8 +28,17 @@
   fill: url(#cursorBlockGrad);
 }
 
-@media (hover: none) {
+/* Mobile / touch par custom cursor hide – sirf tablet (768px+) aur laptop par dikhe */
+@media (max-width: 767px) {
   .cursor-blocks {
-    display: none;
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
+@media (pointer: coarse) {
+  .cursor-blocks {
+    display: none !important;
+    visibility: hidden !important;
   }
 }

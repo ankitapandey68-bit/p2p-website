@@ -32,46 +32,71 @@
 }
 
 @media (max-width: 768px) {
+  /* Hero: Reliable, Scalable & Future-Ready – mobile par bada heading */
+  .hero .hero-title,
+  section.hero .hero-title {
+    font-size: 52px !important;
+    line-height: 1.2 !important;
+  }
+
   .why-choose-subheading {
     white-space: normal !important;
   }
 
-  /* Why Choose - card icons middle mein (mobile) */
-  .why-choose-card {
+  /* Why Choose - card icons aur content dono middle (mobile) */
+  .why-choose-section .why-choose-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
     text-align: center !important;
   }
-  .why-choose-card-icon {
+  .why-choose-section .why-choose-card-icon {
     margin-left: auto !important;
     margin-right: auto !important;
   }
 
   .latest-news-layout {
     flex-direction: column !important;
+    display: flex !important;
   }
   .latest-news-left-col {
-    order: 1;
-    flex: 1 1 100% !important;
+    order: 0 !important;
+    flex: 0 0 auto !important;
     width: 100% !important;
     max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
   }
   .latest-news-image-col {
-    flex: 1 1 100% !important;
+    order: 0 !important;
+    flex: 0 0 auto !important;
     width: 100% !important;
     max-width: 100% !important;
-    height: 280px !important;
-    min-height: 280px !important;
+    height: 260px !important;
+    min-height: 260px !important;
     transform: none !important;
     opacity: 1 !important;
     display: block !important;
+    visibility: visible !important;
   }
   .latest-news-img {
     display: block !important;
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
   }
   .latest-news-content-col {
-    order: 2;
+    order: 1 !important;
+  }
+  /* Latest News ticker - cut off na ho */
+  .latest-news-ticker-wrap {
+    overflow: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .latest-news-subheading {
     white-space: normal !important;
@@ -122,6 +147,13 @@
 }
 
 @media (max-width: 480px) {
+  /* Hero: chhote mobile par bhi bada heading */
+  .hero .hero-title,
+  section.hero .hero-title {
+    font-size: 44px !important;
+    line-height: 1.2 !important;
+  }
+
   .services-container {
     padding: 0 16px !important;
   }

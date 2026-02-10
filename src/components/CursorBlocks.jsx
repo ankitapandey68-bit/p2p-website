@@ -5,11 +5,28 @@ import "./CursorBlocks.css";
 const RING_R = 14;
 const DOT_R = 7;
 
+const MOBILE_MAX_WIDTH = 767;
+
 export default function CursorBlocks() {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [visible, setVisible] = useState(false);
+  const [isDesktopOrTablet, setIsDesktopOrTablet] = useState(false);
 
   const rafRef = useRef(null);
+
+  useEffect(() => {
+    const mqlWidth = window.matchMedia(`(min-width: ${MOBILE_MAX_WIDTH + 1}px)`);
+    const mqlPointer = window.matchMedia("(pointer: fine)"); /* fine = mouse, coarse = touch */
+    const update = () => setIsDesktopOrTablet(mqlWidth.matches && mqlPointer.matches);
+    update();
+    mqlWidth.addEventListener("change", update);
+    mqlPointer.addEventListener("change", update);
+    return () => {
+      mqlWidth.removeEventListener("change", update);
+      mqlPointer.removeEventListener("change", update);
+    };
+  }, []);
+
   const handleMove = useCallback((e) => {
     setVisible(true);
     if (rafRef.current) cancelAnimationFrame(rafRef.current);
@@ -30,7 +47,7 @@ export default function CursorBlocks() {
     };
   }, [handleMove, handleLeave]);
 
-  if (!visible) return null;
+  if (!isDesktopOrTablet || !visible) return null;
 
   return (
     <div className="cursor-blocks" aria-hidden="true">

@@ -166,13 +166,15 @@
   }
 }
 
+/* Mobile: Reliable, Scalable & Future-Ready heading – bada text */
 @media (max-width: 768px) {
   .hero-overlay {
     padding: 0 24px;
   }
 
   .hero-title {
-    font-size: 34px;
+    font-size: 52px !important;
+    line-height: 1.2;
   }
 
   .hero-overlay p {
@@ -186,7 +188,7 @@
   }
 
   .hero-title {
-    font-size: 26px;
+    font-size: 44px !important;
     line-height: 1.2;
   }
 

@@ -105,6 +105,7 @@ const styles = {
     boxShadow: '0 4px 20px rgba(15, 23, 42, 0.08)',
     border: '1px solid #e2e8f0',
     transition: 'transform 0.25s ease, box-shadow 0.25s ease',
+    textAlign: 'center',
   },
   iconWrap: {
     width: '56px',
@@ -116,6 +117,8 @@ const styles = {
     justifyContent: 'center',
     color: '#ffffff',
     marginBottom: '20px',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
   cardTitle: {
     fontSize: '18px',
