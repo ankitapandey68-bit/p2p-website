@@ -2,8 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Hero.css";
 
+const HERO_VIDEO_URL = "https://res.cloudinary.com/dawod02ta/video/upload/v1770406542/vecteezy_colorful-fast-lines-background_2972580_tcsi1o.mp4";
+
 function Hero() {
   const videoRef = useRef(null);
+  const [videoSrc, setVideoSrc] = useState(null);
 
   const words = [
     "Digital Infrastructure",
@@ -13,6 +16,14 @@ function Hero() {
   ];
 
   const [index, setIndex] = useState(0);
+
+  /* Video load delay – pehle page dikhe, phir video load (fast first paint) */
+  useEffect(() => {
+    const id = requestIdleCallback
+      ? requestIdleCallback(() => setVideoSrc(HERO_VIDEO_URL), { timeout: 800 })
+      : setTimeout(() => setVideoSrc(HERO_VIDEO_URL), 400);
+    return () => (requestIdleCallback ? cancelIdleCallback(id) : clearTimeout(id));
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,7 +35,7 @@ function Hero() {
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
+    if (!video || !videoSrc) return;
 
     const playVideo = () => {
       video.play().catch(() => {});
@@ -36,20 +47,22 @@ function Hero() {
       video.addEventListener("loadeddata", playVideo);
       return () => video.removeEventListener("loadeddata", playVideo);
     }
-  }, []);
+  }, [videoSrc]);
 
   return (
     <section id="hero" className="hero">
-<video
-  ref={videoRef}
-  className="hero-video"
-  src="https://res.cloudinary.com/dawod02ta/video/upload/v1770406542/vecteezy_colorful-fast-lines-background_2972580_tcsi1o.mp4"
-  autoPlay
-  loop
-  muted
-  playsInline
-  preload="metadata"
-/>
+      {videoSrc && (
+        <video
+          ref={videoRef}
+          className="hero-video"
+          src={videoSrc}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+        />
+      )}
 
 
 

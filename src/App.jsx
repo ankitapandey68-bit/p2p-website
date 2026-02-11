@@ -1,7 +1,8 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import CursorBlocks from "./components/CursorBlocks";
 import Navbar from "./components/Navbar";
+
+const CursorBlocks = lazy(() => import("./components/CursorBlocks"));
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -23,7 +24,9 @@ function App() {
   return (
     <div style={{ width: "100%", minHeight: "100vh", overflowX: "hidden", maxWidth: "100%" }}>
       <ScrollToTop />
-      <CursorBlocks />
+      <Suspense fallback={null}>
+        <CursorBlocks />
+      </Suspense>
       <Navbar />
       <main style={{ width: "100%", overflowX: "hidden", maxWidth: "100%" }}>
         <Suspense fallback={<PageFallback />}>
