@@ -11,7 +11,7 @@ const styles = {
   main: {
     maxWidth: '1200px',
     margin: '0 auto',
-    padding: '56px 24px 40px 40px',
+    padding: '56px 16px 40px 40px',
     display: 'flex',
     flexWrap: 'wrap',
     gap: '48px',
@@ -23,7 +23,7 @@ const styles = {
     flexWrap: 'wrap',
     gap: '48px',
     flex: '0 1 auto',
-    maxWidth: '600px',
+    maxWidth: '540px',
   },
   brand: {
     flex: '0 0 auto',
