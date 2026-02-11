@@ -269,7 +269,7 @@ function LatestNews() {
                 transition: `transform ${ENTRANCE_DURATION}s ease-out, opacity ${ENTRANCE_DURATION}s ease-out`,
               }}
             >
-              <img src={newsImage} alt="News and updates" style={styles.image} className="latest-news-img" loading="lazy" />
+              <img src={newsImage} alt="News and updates" style={styles.image} className="latest-news-img" loading="lazy" decoding="async" />
             </div>
             <div style={styles.tickerWrap} className="latest-news-ticker-wrap">
               <div className="news-ticker-track" style={styles.tickerTrack}>

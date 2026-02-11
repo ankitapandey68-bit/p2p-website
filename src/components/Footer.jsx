@@ -14,21 +14,29 @@ const styles = {
     padding: '56px 40px 40px',
     display: 'flex',
     flexWrap: 'wrap',
-    gap: '40px',
+    gap: '48px',
     alignItems: 'flex-start',
+    justifyContent: 'space-between',
+  },
+  leftSection: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: '48px',
+    flex: '1 1 400px',
+    maxWidth: '720px',
   },
   brand: {
-    flex: '1 1 280px',
-    maxWidth: '320px',
+    flex: '0 0 auto',
+    minWidth: '200px',
   },
   linksGroup: {
     display: 'flex',
     flexWrap: 'wrap',
-    gap: '40px',
+    gap: '48px',
     flex: '1 1 auto',
   },
   formColumn: {
-    flex: '0 0 auto',
+    flex: '0 0 380px',
     marginLeft: 'auto',
   },
   logo: {
@@ -184,13 +192,14 @@ function Footer() {
   return (
     <footer id="contact" style={styles.footer}>
       <div style={styles.main} className="footer-main">
-        <div style={styles.brand}>
-          <div style={styles.logo}>P2P <span style={styles.logoBold}>Infrastructure</span></div>
-          <p style={styles.tagline}>
-            Powering Connectivity. Securing Operations.
-          </p>
-          <div style={styles.socialRow}>
-            {socialIcons.map((item) => (
+        <div style={styles.leftSection}>
+          <div style={styles.brand}>
+            <div style={styles.logo}>P2P <span style={styles.logoBold}>Infrastructure</span></div>
+            <p style={styles.tagline}>
+              Powering Connectivity. Securing Operations.
+            </p>
+            <div style={styles.socialRow}>
+              {socialIcons.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
@@ -209,11 +218,11 @@ function Footer() {
               >
                 {item.icon}
               </a>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div style={styles.linksGroup}>
+          <div style={styles.linksGroup}>
           <div style={styles.column}>
             <h4 style={styles.columnTitle}>Quick Links</h4>
             <Link to="/" style={styles.link}>Home</Link>
@@ -237,6 +246,7 @@ function Footer() {
             <p style={styles.contactItem}>Email: info@p2pinfra.com</p>
             <p style={styles.contactItem}>Phone: +91 94549 49780</p>
           </div>
+        </div>
         </div>
 
         <div style={styles.formColumn} className="footer-form-column">

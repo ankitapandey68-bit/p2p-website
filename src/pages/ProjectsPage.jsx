@@ -129,7 +129,7 @@ export default function ProjectsPage() {
   return (
     <section style={styles.section}>
       <div style={styles.bannerWrap} className="banner-reveal">
-        <img src={bannerImage} alt="" style={styles.banner} />
+        <img src={bannerImage} alt="" style={styles.banner} decoding="async" fetchPriority="high" />
       </div>
 
       <div style={styles.container}>

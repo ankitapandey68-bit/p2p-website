@@ -60,7 +60,7 @@ function SolutionCards() {
   return (
     <section style={styles.section}>
       <div style={styles.bannerWrap} className="banner-reveal">
-        <img src={solutionBanner} alt="Solutions" style={styles.bannerImage} />
+        <img src={solutionBanner} alt="Solutions" style={styles.bannerImage} decoding="async" fetchPriority="high" />
         <div style={styles.bannerOverlay} />
       </div>
 

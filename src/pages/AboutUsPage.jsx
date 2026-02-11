@@ -291,7 +291,7 @@ export default function AboutUsPage() {
   return (
     <section style={styles.section}>
       <div style={styles.bannerWrap} className="banner-reveal">
-        <img src={bannerImage} alt="" style={styles.banner} />
+        <img src={bannerImage} alt="" style={styles.banner} decoding="async" fetchPriority="high" />
       </div>
       <div style={styles.container}>
         <div style={styles.whoWeAreWrap} ref={whoWeAreRef}>
@@ -336,7 +336,7 @@ export default function AboutUsPage() {
               transition: "opacity 0.7s ease-out, transform 0.8s ease-out",
             }}
           >
-            <img src={missionImage} alt="" style={styles.smallBlockImage} />
+            <img src={missionImage} alt="" style={styles.smallBlockImage} loading="lazy" decoding="async" />
           </div>
           <div style={styles.missionTextCol}>
             <h2 style={styles.blockHeading}>
@@ -367,7 +367,7 @@ export default function AboutUsPage() {
               transition: "opacity 0.7s ease-out, transform 0.8s ease-out",
             }}
           >
-            <img src={visionImage} alt="" style={styles.smallBlockImage} />
+            <img src={visionImage} alt="" style={styles.smallBlockImage} loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -405,7 +405,7 @@ export default function AboutUsPage() {
             {/* Center: bada round image */}
             <div style={styles.coreValuesCenterCol}>
               <div style={styles.centerImageWrap} className="about-center-image">
-                <img src={coreValuesImage} alt="" style={styles.centerImage} />
+                <img src={coreValuesImage} alt="" style={styles.centerImage} loading="lazy" decoding="async" />
               </div>
             </div>
 

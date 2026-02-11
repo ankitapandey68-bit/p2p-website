@@ -357,7 +357,7 @@ function OurBlogs() {
                   }}
                 >
                   {item.cardImage ? (
-                    <img src={item.cardImage} alt="" style={styles.cardImageImg} loading="lazy" />
+                    <img src={item.cardImage} alt="" style={styles.cardImageImg} loading="lazy" decoding="async" />
                   ) : (
                     <div style={{ ...styles.cardImage, background: item.cardGradient }} />
                   )}
