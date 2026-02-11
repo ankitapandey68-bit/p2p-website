@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import newsImage from '../assets/latest news (1).png';
 import AnimatedHeading from './AnimatedHeading';
+
+const newsImage = '/images/latest-news.png';
 
 const newsItems = [
   {
@@ -269,7 +270,7 @@ function LatestNews() {
                 transition: `transform ${ENTRANCE_DURATION}s ease-out, opacity ${ENTRANCE_DURATION}s ease-out`,
               }}
             >
-              <img src={newsImage} alt="News and updates" style={styles.image} className="latest-news-img" loading="lazy" decoding="async" />
+              <img src={newsImage} alt="News and updates" style={styles.image} className="latest-news-img" loading="lazy" decoding="async" fetchPriority="high" />
             </div>
             <div style={styles.tickerWrap} className="latest-news-ticker-wrap">
               <div className="news-ticker-track" style={styles.tickerTrack}>
