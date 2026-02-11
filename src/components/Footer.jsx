@@ -11,7 +11,7 @@ const styles = {
   main: {
     maxWidth: '1200px',
     margin: '0 auto',
-    padding: '56px 40px 40px',
+    padding: '56px 24px 40px 40px',
     display: 'flex',
     flexWrap: 'wrap',
     gap: '48px',
@@ -38,7 +38,7 @@ const styles = {
   formColumn: {
     flex: '1 1 420px',
     minWidth: '420px',
-    maxWidth: '520px',
+    maxWidth: '540px',
     marginLeft: 'auto',
   },
   logo: {
