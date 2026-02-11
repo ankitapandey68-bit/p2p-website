@@ -22,8 +22,8 @@ const styles = {
     display: 'flex',
     flexWrap: 'wrap',
     gap: '48px',
-    flex: '1 1 400px',
-    maxWidth: '720px',
+    flex: '0 1 auto',
+    maxWidth: '600px',
   },
   brand: {
     flex: '0 0 auto',
@@ -36,7 +36,9 @@ const styles = {
     flex: '1 1 auto',
   },
   formColumn: {
-    flex: '0 0 380px',
+    flex: '1 1 420px',
+    minWidth: '420px',
+    maxWidth: '520px',
     marginLeft: 'auto',
   },
   logo: {

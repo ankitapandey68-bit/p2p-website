@@ -12,9 +12,8 @@ const styles = {
   formCompact: {
     background: 'rgba(255,255,255,0.06)',
     borderRadius: '12px',
-    padding: '20px 18px',
+    padding: '24px 22px',
     border: '1px solid rgba(148,163,184,0.25)',
-    maxWidth: '320px',
     width: '100%',
   },
   title: {
