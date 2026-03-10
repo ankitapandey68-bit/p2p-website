@@ -3,6 +3,7 @@ import blogImageDigital from '../assets/vecteezy_nighttime-panorama-wireless-net
 import AnimatedHeading from './AnimatedHeading';
 import blogImageSurveillance from '../assets/vecteezy_professional-home-cctv-and-security-cameras_22994012.jpg';
 import blogImageFiber from '../assets/vecteezy_close-up-of-server-rack-with-blinking-lights-and-connected_59573294.jpeg';
+import blogImageDataInfra from '../assets/vecteezy_next-gen-networking-infrastructure-data-center.png';
 
 const blogItems = [
   {
@@ -82,7 +83,7 @@ const blogItems = [
   },
   {
     category: 'Data Infrastructure',
-    cardImage: blogImageFiber,
+    cardImage: blogImageDataInfra,
     title: 'Why Organizations are Investing in Scalable Data Infrastructure',
     excerpt: 'Data has become one of the most valuable assets for modern organizations. As data volumes continue to grow rapidly, organizations must invest in scalable data infrastructure capable of handling increasing workloads.',
     readTime: '5 min read',
