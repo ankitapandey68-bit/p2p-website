@@ -245,7 +245,7 @@ function Footer() {
             <h4 style={styles.columnTitle}>Contact</h4>
             <p style={styles.contactItem}>P2P Infrastructure</p>
             <p style={styles.contactItem}>Varanasi, Uttar Pradesh, India</p>
-            <p style={styles.contactItem}>Email: info@p2pinfra.com</p>
+            <p style={styles.contactItem}>Email: info@p2pinfrastructure.com</p>
             <p style={styles.contactItem}>Phone: +91 94549 49780</p>
           </div>
         </div>
