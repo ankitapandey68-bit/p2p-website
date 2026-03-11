@@ -31,14 +31,14 @@ const styles = {
   },
   linksGroup: {
     display: 'flex',
-    flexWrap: 'wrap',
-    gap: '48px',
+    flexWrap: 'nowrap',
+    gap: '32px',
     flex: '1 1 auto',
   },
   formColumn: {
-    flex: '1 1 420px',
-    minWidth: '420px',
-    maxWidth: '540px',
+    flex: '1 1 340px',
+    minWidth: '300px',
+    maxWidth: '400px',
     marginLeft: 'auto',
   },
   logo: {
@@ -224,7 +224,7 @@ function Footer() {
             </div>
           </div>
 
-          <div style={styles.linksGroup}>
+          <div style={styles.linksGroup} className="footer-links-group">
           <div style={styles.column}>
             <h4 style={styles.columnTitle}>Quick Links</h4>
             <Link to="/" style={styles.link}>Home</Link>

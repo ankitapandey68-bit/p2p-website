@@ -15,6 +15,7 @@ const styles = {
     padding: '24px 22px',
     border: '1px solid rgba(148,163,184,0.25)',
     width: '100%',
+    maxWidth: '380px',
   },
   title: {
     fontSize: '22px',
